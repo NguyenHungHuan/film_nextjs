@@ -24,21 +24,21 @@ export async function generateMetadata({ searchParams, params }: Props) {
     openGraph: {
       title: dataFilm.seoOnPage.titleHead.replace('2022', `${new Date().getFullYear()}`),
       description: dataFilm.seoOnPage.descriptionHead.replace('2022', `${new Date().getFullYear()}`),
-      url: `https://vnphim.vercel.app${PATH.list}/${type}/${new URLSearchParams({
+      url: `https://vnphim.vercel.app${PATH.list}/${type}?${new URLSearchParams({
       ...searchParams,
       page: `${dataFilm.params.pagination.currentPage}`,
     })}`,
       siteName: 'Xem phim VPhim - Nguyễn Hùng Huân - Nextjs Project',
       images: [
         {
-          url: 'https://nextjs.org/og.png',
+          url: `/share.png`,
         },
       ],
       locale: 'vi_VN',
       type: 'website',
     },
     alternates: {
-      canonical: `https://vnphim.vercel.app${PATH.list}/${type}/${new URLSearchParams({
+      canonical: `https://vnphim.vercel.app${PATH.list}/${type}?${new URLSearchParams({
       ...searchParams,
       page: `${dataFilm.params.pagination.currentPage}`,
     })}`,

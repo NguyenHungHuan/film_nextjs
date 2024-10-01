@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'Xem phim VNPhim - Nguyễn Hùng Huân - Nextjs Project',
     images: [
       {
-        url: 'https://nextjs.org/og.png',
+        url: `https://vnphim.vercel.app/share.png`,
       },
     ],
     locale: 'vi_VN',

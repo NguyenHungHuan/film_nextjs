@@ -48,7 +48,7 @@ const Footer = () => {
           </a>
         </div>
         <p className='mt-8 text-2xl leading-6 text-center text-gray-500 dark:text-gray-300'>
-          © 2023 VPhim™. Nguyen Hung Huan.
+          © 2023 VNPhim™. Nguyen Hung Huan.
         </p>
       </div>
     </footer>

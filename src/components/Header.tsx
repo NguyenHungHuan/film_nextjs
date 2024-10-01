@@ -52,7 +52,7 @@ const Header = () => {
             }
           >
             <h1 title='Web xem phim miễn phí lớn nhất Việt Nam' className={`font-bold active:scale-90 text-4xl hover:text-rose-600 ${pathname === PATH.home ? 'text-rose-600' : 'text-rose-800'}`}>
-              VPhim
+              VNPhim
             </h1>
           </Link>
           <div className='hidden md:block'>
