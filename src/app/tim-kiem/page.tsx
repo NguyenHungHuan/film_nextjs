@@ -1,6 +1,7 @@
 import filmApis from '@/apis/filmApis';
 import List from '@/app/tim-kiem/list';
 import SearchInput from '@/app/tim-kiem/SearchInput'
+import envConfig from '@/config';
 import PATH from '@/constants/path';
 import { Suspense, cache } from 'react'
 
@@ -19,13 +20,13 @@ export async function generateMetadata({ searchParams }: Props) {
   return {
     title: `${dataSearch.seoOnPage.titleHead.replace('2022', `${new Date().getFullYear()}`)}`,
     description: `${dataSearch.seoOnPage.descriptionHead.replace('2022', `${new Date().getFullYear()}`)}`,
-    keywords: 'Xem phim, Xem phim online, Film, Films, TV shows, Anime, anime, tv shows, series, film series, Phim goc, Xem phim gốc, xem phim gốc, xem phim, Xem phim hot, Xem phim hay, Xem phim ngôn tình, Xem phim hành động, Xem phim kinh dị, Xem phim Hàn quốc, xem phim nhật bản, xem phim trung quốc, xem phim thái lan, xem phim ma, xem phim mới nhất, xem phim mới, xem phim hay, xem phim âu mỹ, xem phim anh, vphim, VPhim, motphim, dongphim, dongphym, motchill, xemphim, phimblur, phimblu',
-    authors: [{ name: 'Xem phim VPhim - Nguyễn Hùng Huân', url: 'https://vphim.onrender.com/' }],
+    keywords: 'Xem phim, Xem phim online, Film, Films, TV shows, Anime, anime, tv shows, series, film series, Phim goc, Xem phim gốc, xem phim gốc, xem phim, Xem phim hot, Xem phim hay, Xem phim ngôn tình, Xem phim hành động, Xem phim kinh dị, Xem phim Hàn quốc, xem phim nhật bản, xem phim trung quốc, xem phim thái lan, xem phim ma, xem phim mới nhất, xem phim mới, xem phim hay, xem phim âu mỹ, xem phim anh, VNPhim, VNPhim, motphim, dongphim, dongphym, motchill, xemphim, phimblur, phimblu',
+    authors: [{ name: 'Xem phim VNPhim - Nguyễn Hùng Huân', url: `${envConfig.NEXT_PUBLIC_URL}` }],
     openGraph: {
       title: dataSearch.seoOnPage.titleHead.replace('2022', `${new Date().getFullYear()}`),
       description: dataSearch.seoOnPage.descriptionHead.replace('2022', `${new Date().getFullYear()}`),
-      url: `https://vnphim.vercel.app${PATH.search}?keyword=${keyword}&page=${page}`,
-      siteName: 'Xem phim VPhim - Nguyễn Hùng Huân - Nextjs Project',
+      url: `${envConfig.NEXT_PUBLIC_URL}${PATH.search}?keyword=${keyword}&page=${page}`,
+      siteName: 'Xem phim VNPhim - Nguyễn Hùng Huân - Nextjs Project',
       images: [
         {
           url: `/share.png`,
@@ -35,7 +36,7 @@ export async function generateMetadata({ searchParams }: Props) {
       type: 'website',
     },
     alternates: {
-      canonical: `https://vnphim.vercel.app${PATH.search}?keyword=${keyword}&page=${page}`,
+      canonical: `${envConfig.NEXT_PUBLIC_URL}${PATH.search}?keyword=${keyword}&page=${page}`,
     },
   }
 }

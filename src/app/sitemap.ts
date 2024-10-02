@@ -18,28 +18,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
    const filmSeriesUrls = dataFilmSeries.items.map((item) => 
      ({
-      url: `${baseUrl}/${PATH.film}/${item.slug}`,
+      url: `${baseUrl}${PATH.film}/${item.slug}`,
       lastModified: new Date(),
       priority: 0.7
     })
    )
    const filmOddUrls = dataFilmOdd.items.map((item) => 
    ({
-      url: `${baseUrl}/${PATH.film}/${item.slug}`,
+      url: `${baseUrl}${PATH.film}/${item.slug}`,
       lastModified: new Date(),
       priority: 0.7
     })
    )
    const filmSeriesNewUrls = dataFilmSeriesNew.items.map((item) => 
      ({
-      url: `${baseUrl}/${PATH.film}/${item.slug}`,
+      url: `${baseUrl}${PATH.film}/${item.slug}`,
       lastModified: new Date(),
       priority: 0.7
     })
    )
    const filmOddNewUrls = dataFilmOddNew.items.map((item) => 
      ({
-      url: `${baseUrl}/${PATH.film}/${item.slug}`,
+      url: `${baseUrl}${PATH.film}/${item.slug}`,
       lastModified: new Date(),
       priority: 0.7
     })

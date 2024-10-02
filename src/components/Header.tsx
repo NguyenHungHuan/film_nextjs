@@ -43,7 +43,7 @@ const Header = () => {
         <div className='h-full flex items-center gap-4'>
           <Link
             href={PATH.home}
-            title='VPhim'
+            title='VNPhim'
             onClick={() =>
               window.scrollTo({
                 top: 0,
@@ -62,7 +62,7 @@ const Header = () => {
         {/* hamburger button */}
         <div className='flex md:hidden items-center gap-1'>
           <Link
-            title='Tìm phim miễn phí tại VPhim'
+            title='Tìm phim miễn phí tại VNPhim'
             href={{
               pathname: PATH.search,
               query: {
@@ -80,7 +80,7 @@ const Header = () => {
             Tìm Kiếm
           </Link>
           <button
-            title='Menu phim VPhim'
+            title='Menu phim VNPhim'
             onClick={() => setOpenNav((prev) => !prev)}
             className='flex flex-col gap-[5px] p-2'
           >
@@ -104,7 +104,7 @@ const Header = () => {
           <ul className='flex flex-col text-2xl'>
             <li>
               <Link
-                title='Xem phim hot nhất tại VPhim'
+                title='Xem phim hot nhất tại VNPhim'
                 href={{
                   pathname: PATH.hot,
                   query: {
@@ -118,7 +118,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                title='Xem phim mới nhất tại VPhim'
+                title='Xem phim mới nhất tại VNPhim'
                 href={{
                   pathname: `${PATH.list}/${PATH.new}`,
                   query: {
@@ -136,7 +136,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                title='Xem phim bộ hay nhất tại VPhim'
+                title='Xem phim bộ hay nhất tại VNPhim'
                 href={{
                   pathname: `${PATH.list}/${PATH.series}`,
                   query: {
@@ -154,7 +154,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                title='Xem phim lẻ hay nhất tại VPhim'
+                title='Xem phim lẻ hay nhất tại VNPhim'
                 href={{
                   pathname: `${PATH.list}/${PATH.odd}`,
                   query: {
@@ -172,7 +172,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                title='Xem tv shows hay nhất tại VPhim'
+                title='Xem tv shows hay nhất tại VNPhim'
                 href={{
                   pathname: `${PATH.list}/${PATH.tvShows}`,
                   query: {
@@ -190,7 +190,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                title='Xem phim hoạt hình hay nhất tại VPhim'
+                title='Xem phim hoạt hình hay nhất tại VNPhim'
                 href={{
                   pathname: `${PATH.list}/${PATH.anime}`,
                   query: {

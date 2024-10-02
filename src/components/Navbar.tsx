@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul className='flex items-center font-semibold text-base lg:text-lg'>
         <li>
           <Link
-            title='Tìm phim miễn phí tại VPhim'
+            title='Tìm phim miễn phí tại VNPhim'
             href={{
               pathname: PATH.search,
               query: {
@@ -28,7 +28,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            title='Xem phim hot nhất tại VPhim'
+            title='Xem phim hot nhất tại VNPhim'
             href={{
               pathname: PATH.hot,
               query: {
@@ -42,7 +42,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            title='Xem phim mới nhất tại VPhim'
+            title='Xem phim mới nhất tại VNPhim'
             href={{
               pathname: `${PATH.list}/${PATH.new}`,
               query: {
@@ -60,7 +60,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            title='Xem phim bộ hay nhất tại VPhim'
+            title='Xem phim bộ hay nhất tại VNPhim'
             href={{
               pathname: `${PATH.list}/${PATH.series}`,
               query: {
@@ -78,7 +78,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            title='Xem phim lẻ hay nhất tại VPhim'
+            title='Xem phim lẻ hay nhất tại VNPhim'
             href={{
               pathname: `${PATH.list}/${PATH.odd}`,
               query: {
@@ -96,7 +96,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            title='Xem tv shows hay nhất tại VPhim'
+            title='Xem tv shows hay nhất tại VNPhim'
             href={{
               pathname: `${PATH.list}/${PATH.tvShows}`,
               query: {
@@ -114,7 +114,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            title='Xem phim hoạt hình hay nhất tại VPhim'
+            title='Xem phim hoạt hình hay nhất tại VNPhim'
             href={{
               pathname: `${PATH.list}/${PATH.anime}`,
               query: {
