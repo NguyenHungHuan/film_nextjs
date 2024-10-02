@@ -1,7 +1,8 @@
+import envConfig from '@/config'
 import axios from 'axios'
 
 export const axiosClients = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: `${envConfig.NEXT_PUBLIC_API_ENDPOINT}`,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json'

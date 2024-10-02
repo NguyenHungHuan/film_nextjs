@@ -1,4 +1,3 @@
-import { paramOption } from '@/hooks/useQueryConfig'
 import Link from 'next/link'
 
 interface Props {
@@ -6,6 +5,16 @@ interface Props {
   page: number
   queryConfig: paramOption
 }
+
+export type paramOption = {
+  page?: string
+  sort_field?: string
+  category?: string
+  country?: string
+  year?: string
+  keyword?: string
+}
+
 const RANGE = 2
 export default function Pagination({ page, totalPage, queryConfig }: Props) {
   const renderPagination = () => {
