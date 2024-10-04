@@ -76,7 +76,7 @@ const  Detail = async ({params} : {params: {name: string}})  => {
               </div>
             ) : (
               <Link
-                href={`${PATH.watch}/${dataFilm.item.slug}`}
+                href={`${PATH.watch}/${dataFilm.item.slug}?sv=1&ep=1`}
                 title={`Xem phim ${dataFilm.item.name}`}
                 className='active:scale-90 flex items-center justify-center gap-3 text-white uppercase text-xl bg-red-700/80 hover:bg-red-700 w-full rounded p-[7px] mt-4'
               >

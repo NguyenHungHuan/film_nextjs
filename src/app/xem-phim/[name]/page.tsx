@@ -33,16 +33,33 @@ export async function generateMetadata({ params }: { params: { name: string } })
   }
 }
 
-const Film = async ({ params }: { params: { name: string } }) => {
+type Props = {
+  params: { name: string },
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+const Film = async ({ params, searchParams }: Props) => {
   // Fetch film data on the server
   const response = await getFilm(params.name);
   const dataFilm = response.data.data;
 
+  const getServer = (server: string) => { 
+      if(isNaN(Number(server))) return 1
+      const servers = dataFilm.item.episodes.length
+      if(Number(server) > servers || Number(server) < 1) return 1
+      return Number(server)
+  }
+
+  const getEpisode = (episode: string) => { 
+    if(isNaN(Number(episode))) return 1
+    const episodes = dataFilm.item.episodes[0].server_data.length
+    if(Number(episode) > episodes || Number(episode) < 1) return 1
+    return Number(episode)
+}
+
   // Determine initial server name and episode link
-  const initialNameServer = dataFilm.item.episodes[0]?.server_name;
-  const initialEpisode = dataFilm.item.episodes.find(
-    (item) => item.server_name === initialNameServer
-  )?.server_data[0]?.link_embed;
+  const initialNameServer = dataFilm.item.episodes[getServer(searchParams.sv as string) - 1]?.server_name;
+  const initialEpisode = dataFilm.item.episodes.find((item) => item.server_name === initialNameServer)?.server_data[getEpisode(searchParams.ep as string) - 1]?.link_embed;
 
   return (
     <div>
@@ -59,15 +76,21 @@ const Film = async ({ params }: { params: { name: string } }) => {
 
       <div className='mt-6 flex items-center justify-center gap-2'>
         {dataFilm.item.episodes.map((item) => (
-          <button
+          <Link
+            href={{
+                query: {
+                  sv: `${dataFilm.item.episodes.indexOf(item) + 1}`,
+                  ep: `${getEpisode(searchParams.ep as string)}`
+                }
+            }}
             title={`Server ${item.server_name}`}
             key={item.server_name}
-            className={`rounded px-2 py-1 flex items-center justify-center gap-1 ${
-              item.server_name === initialNameServer ? 'bg-white/20' : 'bg-white'
+            className={`rounded lowercase px-2 py-1 flex items-center justify-center gap-1 ${
+              item.server_name === initialNameServer ? 'bg-white/20' : 'bg-white/40 text-black hover:bg-white/20 hover:text-white'
             }`}
           >
             {item.server_name}
-          </button>
+          </Link>
         ))}
       </div>
 
@@ -116,13 +139,19 @@ const Film = async ({ params }: { params: { name: string } }) => {
           {dataFilm.item.episodes
             .find((item) => item.server_name === initialNameServer)
             ?.server_data.map((item, index) => (
-              <button
+              <Link
+                href={{
+                  query: {
+                    sv: `${getServer(searchParams.sv as string)}`,
+                    ep: `${index + 1}`,
+                  }
+                }}
                 title={`Tập ${item.name}`}
                 key={index}
-                className='flex-shrink-0 text-white whitespace-nowrap overflow-hidden text-lg min-w-[99px] h-[40px] px-4 rounded bg-green-400'
+                className={`flex-shrink-0 flex justify-center items-center text-white whitespace-nowrap overflow-hidden text-lg min-w-[99px] h-[40px] px-4 rounded ${getEpisode(searchParams.ep as string) === index + 1 ? 'bg-green-400/50' : 'bg-green-400'}`}
               >
                 Tập {item.name}
-              </button>
+              </Link>
             ))}
         </div>
       </div>
