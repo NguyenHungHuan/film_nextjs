@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import envConfig from "@/config";
+import ProgressBarProvider from "@/components/ProgressBarProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -39,12 +40,14 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body>
-        <Header />
-          {children}
-          <div className='hidden md:block'>
-            <ScrollToTop />
-          </div>
-        <Footer/>
+        <ProgressBarProvider>
+          <Header />
+            {children}
+            <div className='hidden md:block'>
+              <ScrollToTop />
+            </div>
+          <Footer/>
+        </ProgressBarProvider>
       </body>
     </html>
   );

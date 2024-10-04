@@ -3,7 +3,7 @@ import List from '@/app/tim-kiem/list';
 import SearchInput from '@/app/tim-kiem/SearchInput'
 import envConfig from '@/config';
 import PATH from '@/constants/path';
-import { Suspense, cache } from 'react'
+import { Suspense } from 'react'
 
 interface Props {
   searchParams: { [key: string]: string | string[] | undefined };

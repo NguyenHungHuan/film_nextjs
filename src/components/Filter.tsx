@@ -1,7 +1,7 @@
 'use client'
 import filmApis from '@/apis/filmApis'
 import PATH from '@/constants/path'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 import { useEffect, useState } from 'react';
 
 interface Props {
